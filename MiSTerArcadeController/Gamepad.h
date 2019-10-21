@@ -26,28 +26,11 @@
 
 #include "HID.h"
 
-// The numbers after colon are bit fields, meaning how many bits the field uses.
-// Remove those if there are problems
 typedef struct {
-  union 
-  {
-    struct {
-      bool  b0: 1 ;
-      bool  b1: 1 ;
-      bool  b2: 1 ;
-      bool  b3: 1 ;
-      bool  b4: 1 ;
-      bool  b5: 1 ;
-      bool  b6: 1 ;
-      bool  b7: 1 ; 
-    };
-    uint8_t buttons;
-  };
+  uint16_t buttons;
   int8_t X  ;
   int8_t Y  ;  
-  
 } GamepadReport;
-
 
 class Gamepad_
 {  

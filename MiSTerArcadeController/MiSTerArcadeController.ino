@@ -6,8 +6,8 @@ bool usbUpdate = false; // Should gamepad data be sent to USB?
 
 uint8_t axes = 0x0f;
 uint8_t axesPrev = 0x0f;
-uint8_t buttons = 0;
-uint8_t buttonsPrev = 0;
+uint16_t buttons = 0;
+uint16_t buttonsPrev = 0;
 
 void setup() 
 {
@@ -16,8 +16,8 @@ void setup()
   PORTF |=  B11110000; // Enable internal pull-up resistors
 
   // Buttons
-  DDRD  &= ~B00000011; // Set PD0-PD1 as inputs
-  PORTD |=  B00000011; // Enable internal pull-up resistors
+  DDRD  &= ~B10011111; // Set PD0-PD4 and PD7 as inputs
+  PORTD |=  B10011111; // Enable internal pull-up resistors
   DDRB  &= ~B01111110; // Set PB1-PB6 as inputs
   PORTB |=  B01111110; // Enable internal pull-up resistors
 
@@ -28,7 +28,7 @@ void loop()
 {
   // Read axis and button inputs (bitwise NOT results in a 1 when button/axis pressed)
   axes = ~(PINF & B11110000);
-  buttons = ~((PIND & B00000011) | ((PINB & B01111110) << 1));
+  buttons = ~((PIND & B00011111) | ((PIND & B10000000) << 4) | ((PINB & B01111110) << 4));
 
   // Has axis inputs changed?
   if(axes != axesPrev)
