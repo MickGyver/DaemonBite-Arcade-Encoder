@@ -5,5 +5,8 @@ This is an arcade controller project for the MiSTer and any other device accepti
 The wiring is simple. Connect one leg of each microswitch to GND and the other leg to the digital pin according to the schematic below. That's it!  
 ![Assemble1](images/mister-arcade-controller-wiring.png)
 
-## Configuring the Arduino
-Just download the free Arduino IDE, connect the Arduino Pro Micro to a USB port and let the drivers install, then upload the project in the IDE.
+## Programming the Arduino
+1. Download the free Arduino IDE: https://www.arduino.cc/en/main/software
+2. Connect the Arduino Pro Micro to a USB port and let the drivers install.
+3. Choose the correct board and virtual COM port in the IDE.
+3. Compile/Upload the project.
