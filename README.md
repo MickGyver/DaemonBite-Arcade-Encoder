@@ -1,5 +1,11 @@
 # MiSTer-Arcade-Controller
-This is an arcade controller project for the MiSTer and any other device accepting USB HID joysticks using an Arduino Pro Micro. The input lag for the Arduino configured as a joystick/gamepad is very low, lower than the "Zero Delay" USB encoders. This project can also be used to create a NeoGeo/Atari/Commodore/Amiga controller to USB adapters.
+This is an arcade controller project for the MiSTer and any other device accepting USB HID joysticks using an Arduino Pro Micro. This project can also be used to create a NeoGeo/Atari/Commodore/Amiga controller to USB adapters.
+
+The input lag for an arcade controller or adapter built around this project is very low. Here are some statistics with a 1ms polling rate on a MiSTer:
+
+| Samples | Average | Max | Min | Std Dev |
+| ------ | ------ | ------ | ------ | ------ | 
+| 13962 | 0.74ms | 1.28ms | 0.23ms | 0.29ms |
 
 ## Wiring (Arcade Controller)
 The wiring is simple. Connect one leg of each microswitch to GND and the other leg to the digital pin according to the schematic below. That's it!  
