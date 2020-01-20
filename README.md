@@ -9,13 +9,13 @@ The input lag for an arcade controller or adapter built around this project is v
 
 ## Wiring (Arcade Controller)
 The wiring is simple. Connect one leg of each microswitch to GND and the other leg to the digital pin according to the schematic below. That's it!  
-![Assemble1](images/mister-arcade-controller-wiring.png)
+![Assemble1](images/daemonbite-arcade-encoder-wiring.png)
 
 ## Wiring (NeoGeo USB Adapter)
-![Assemble1](images/mister-arcade-controller-wiring-neogeo.png)
+![Assemble1](images/daemonbite-arcade-encoder-wiring-neogeo.png)
 
 ## Wiring (Atari/Commodore/Amiga USB Adapter)
-![Assemble1](images/mister-arcade-controller-wiring-atari.png)
+![Assemble1](images/daemonbite-arcade-encoder-wiring-atari.png)
 
 ## Programming the Arduino
 1. Download the free Arduino IDE: https://www.arduino.cc/en/main/software
