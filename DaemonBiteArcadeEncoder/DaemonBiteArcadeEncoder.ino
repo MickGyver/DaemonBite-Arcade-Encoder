@@ -1,3 +1,13 @@
+/*  DaemonBite Arcade Encoder
+ *  Author: Mikael Norrgård <mick@daemonbite.com>
+ *
+ *  Copyright (c) 2019 Mikael Norrgård <http://daemonbite.com>
+ *  
+ *  GNU GENERAL PUBLIC LICENSE
+ *  Version 3, 29 June 2007
+ *  
+ */
+
 #include "gamepad.h"
 
 // Set up USB HID gamepad
