@@ -36,7 +36,7 @@ class Gamepad_
   public:
     GamepadReport _GamepadReport;
     Gamepad_(void);
-    void begin(uint8_t id);
+    //void begin(uint8_t id); // reportId currently hardcoded to 1
     void end(void);
     void reset(void);
     void send();

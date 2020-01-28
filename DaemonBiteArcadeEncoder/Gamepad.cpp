@@ -66,10 +66,11 @@ Gamepad_::Gamepad_(void)
   HID().AppendDescriptor(&node);
 }
 
-void Gamepad_::begin(uint8_t id) 
+// reportId currently hardcoded to 1
+/*void Gamepad_::begin(uint8_t id) 
 {
   reportId=id;
-}
+}*/
 
 void Gamepad_::end(void) 
 {
