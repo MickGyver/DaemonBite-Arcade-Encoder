@@ -23,12 +23,12 @@
 
 #include "Gamepad.h"
 
-//#define DEBUG               // Enables debugging (sends data to usb serial)
+//#define DEBUG             // Enables debugging (sends data to usb serial)
 #define DEBOUNCE_TIME 10    // Debounce time in milliseconds
 
 Gamepad_ Gamepad;           // Set up USB HID gamepad
 bool     usbUpdate = false; // Should gamepad data be sent to USB?
-bool     debounce = true;   // Debounce?
+bool     debounce  = false; // Debounce?
 uint8_t  pin;               // Used in for loops
 uint32_t millisNow = 0;     // Used for Diddly-squat-Delay-Debouncing™
 
@@ -83,7 +83,7 @@ void loop()
   millisNow = millis();
 
   // Check debounce selector switch
-  debounce = (PINE & B01000000) ? true : false;
+  debounce = (PINE & B01000000) ? false : true;
 
   for(uint8_t i=0; i<10; i++) // One iteration (when debounce is enabled) takes approximately 35µs to complete, so we don't need to check the time between every iteration
   {
