@@ -23,7 +23,8 @@
 
 #include "Gamepad.h"
 
-#define DEBOUNCE_TIME 7     // Debounce time in milliseconds
+//#define DEBUG               // Enables debugging (sends data to usb serial)
+#define DEBOUNCE_TIME 10    // Debounce time in milliseconds
 
 Gamepad_ Gamepad;           // Set up USB HID gamepad
 bool     usbUpdate = false; // Should gamepad data be sent to USB?
@@ -43,6 +44,11 @@ uint16_t buttons = 0;
 uint16_t buttonsPrev = 0;
 uint16_t buttonsBits[12] = {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80,0x100,0x200,0x400,0x800};
 long     buttonsMillis[12];
+
+#ifdef DEBUG
+  char buf[16];
+  uint32_t millisSent = 0;
+#endif
 
 void setup() 
 {
@@ -65,6 +71,10 @@ void setup()
     axesMillis[pin]=0;
   for(pin=0; pin<12; pin++)   
     buttonsMillis[pin]=0;
+
+  #ifdef DEBUG
+    Serial.begin(115200);
+  #endif
 }
 
 void loop() 
@@ -137,6 +147,14 @@ void loop()
     {
       Gamepad.send();
       usbUpdate = false;
+
+      #ifdef DEBUG
+        sprintf(buf, "%06lu: %d%d%d%d", millisNow-millisSent, ((axes & 0x10)>>4), ((axes & 0x20)>>5), ((axes & 0x40)>>6), ((axes & 0x80)>>7) );
+        Serial.print(buf);
+        sprintf(buf, " %d%d%d%d", (buttons & 0x01), ((buttons & 0x02)>>1), ((buttons & 0x04)>>2), ((buttons & 0x08)>>3) );
+        Serial.println(buf);
+        millisSent = millisNow;
+      #endif
     }
   }
  
