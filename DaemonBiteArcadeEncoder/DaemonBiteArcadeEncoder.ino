@@ -38,13 +38,13 @@ uint8_t  axesDirect = 0x0f;
 uint8_t  axes = 0x0f;
 uint8_t  axesPrev = 0x0f;
 uint8_t  axesBits[4] = {0x10,0x20,0x40,0x80};
-long     axesMillis[4];
+uint32_t axesMillis[4];
 
 uint16_t buttonsDirect = 0;
 uint16_t buttons = 0;
 uint16_t buttonsPrev = 0;
 uint16_t buttonsBits[12] = {0x01,0x02,0x04,0x08,0x10,0x20,0x40,0x80,0x100,0x200,0x400,0x800};
-long     buttonsMillis[12];
+uint32_t buttonsMillis[12];
 
 #ifdef DEBUG
   char buf[16];
@@ -68,7 +68,7 @@ void setup()
   PORTE |=  B01000000; // Enable internal pull-up resistor
 
   // Initialize debouncing timestamps
-  for(pin=0; pin<12; pin++)
+  for(pin=0; pin<4; pin++)
     axesMillis[pin]=0;
   for(pin=0; pin<12; pin++)   
     buttonsMillis[pin]=0;
