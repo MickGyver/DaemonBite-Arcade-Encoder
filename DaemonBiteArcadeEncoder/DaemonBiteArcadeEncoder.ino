@@ -98,7 +98,7 @@ void loop()
       for(pin=0; pin<4; pin++)
       {
         // Check if the current pin state is different to the stored state and that enough time has passed since last change
-        if((axesDirect & axesBits[pin]) != (axes & axesBits[pin]) && millisNow > axesMillis[pin]+DEBOUNCE_TIME)
+        if((axesDirect & axesBits[pin]) != (axes & axesBits[pin]) && (millisNow - axesMillis[pin]) > DEBOUNCE_TIME)
         {
           // Toggle the pin, we can safely do this because we know the current state is different to the stored state
           axes ^= axesBits[pin];
@@ -111,7 +111,7 @@ void loop()
       for(pin=0; pin<12; pin++)
       {
         // Check if the current pin state is different to the stored state and that enough time has passed since last change
-        if((buttonsDirect & buttonsBits[pin]) != (buttons & buttonsBits[pin]) && millisNow > buttonsMillis[pin]+DEBOUNCE_TIME)
+        if((buttonsDirect & buttonsBits[pin]) != (buttons & buttonsBits[pin]) && (millisNow - buttonsMillis[pin]) > DEBOUNCE_TIME)
         {
           // Toggle the pin, we can safely do this because we know the current state is different to the stored state
           buttons ^= buttonsBits[pin];
