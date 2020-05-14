@@ -129,7 +129,16 @@ void loop()
     // Has axis inputs changed?
     if(axes != axesPrev)
     {
-      Gamepad._GamepadReport.Y = ((axes & B01000000)>>6) - ((axes & B10000000)>>7);
+      // UP + DOWN = UP, SOCD (Simultaneous Opposite Cardinal Directions) Cleaner
+      if(axes & B10000000)
+        Gamepad._GamepadReport.Y = -1;
+      else if(axes & B01000000)
+        Gamepad._GamepadReport.Y = 1;
+      else
+        Gamepad._GamepadReport.Y = 0;
+      // UP + DOWN = NEUTRAL
+      //Gamepad._GamepadReport.Y = ((axes & B01000000)>>6) - ((axes & B10000000)>>7);
+      // LEFT + RIGHT = NEUTRAL
       Gamepad._GamepadReport.X = ((axes & B00010000)>>4) - ((axes & B00100000)>>5);
       axesPrev = axes;
       usbUpdate = true;
