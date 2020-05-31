@@ -1,4 +1,8 @@
 /*  Gamepad.cpp
+ *   
+ *  Based on the advanced HID library for Arduino: 
+ *  https://github.com/NicoHood/HID
+ *  Copyright (c) 2014-2015 NicoHood
  * 
  *  Copyright (c) 2020 Mikael Norrgård <http://daemonbite.com>
  *
@@ -19,22 +23,20 @@
  *  along with this program.  If not, see <https://www.gnu.org/licenses/>.
  *  
  */
-
 #include "Gamepad.h"
 
 static const uint8_t _hidReportDescriptor[] PROGMEM = {
   0x05, 0x01,                       // USAGE_PAGE (Generic Desktop)
-    0x09, 0x04,                       // USAGE (Joystick) (Maybe change to gamepad? I don't think so but...)
-    0xa1, 0x01,                       // COLLECTION (Application)
-    0x85, 0x01,                       // REPORT_ID (1) // change to 3 if using mouse and keyboard on 1&2
+  0x09, 0x04,                       // USAGE (Joystick)
+  0xa1, 0x01,                       // COLLECTION (Application)
     0xa1, 0x00,                       // COLLECTION (Physical)
     
       0x05, 0x09,                       // USAGE_PAGE (Button)
       0x19, 0x01,                       // USAGE_MINIMUM (Button 1)
-      0x29, 0x0C,                       // USAGE_MAXIMUM (Button 12)
+      0x29, 0x0c,                       // USAGE_MAXIMUM (Button 12)
       0x15, 0x00,                       // LOGICAL_MINIMUM (0)
       0x25, 0x01,                       // LOGICAL_MAXIMUM (1)
-      0x95, 0x0C,                       // REPORT_COUNT (12)
+      0x95, 0x0c,                       // REPORT_COUNT (12)
       0x75, 0x01,                       // REPORT_SIZE (1)
       0x81, 0x02,                       // INPUT (Data,Var,Abs)
 
@@ -58,23 +60,76 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
   0xc0,                             // END_COLLECTION 
 };
 
-
-Gamepad_::Gamepad_(void) 
-{ 
-  reportId=1;
-  static HIDSubDescriptor node(_hidReportDescriptor, sizeof(_hidReportDescriptor));
-  HID().AppendDescriptor(&node);
+Gamepad_::Gamepad_(void) : PluggableUSBModule(1, 1, epType), protocol(HID_REPORT_PROTOCOL), idle(1)
+{
+  epType[0] = EP_TYPE_INTERRUPT_IN;
+  PluggableUSB().plug(this);
 }
 
-// reportId currently hardcoded to 1
-/*void Gamepad_::begin(uint8_t id) 
+int Gamepad_::getInterface(uint8_t* interfaceCount)
 {
-  reportId=id;
-}*/
+  *interfaceCount += 1; // uses 1
+  HIDDescriptor hidInterface = {
+    D_INTERFACE(pluggedInterface, 1, USB_DEVICE_CLASS_HUMAN_INTERFACE, HID_SUBCLASS_NONE, HID_PROTOCOL_NONE),
+    D_HIDREPORT(sizeof(_hidReportDescriptor)),
+    D_ENDPOINT(USB_ENDPOINT_IN(pluggedEndpoint), USB_ENDPOINT_TYPE_INTERRUPT, USB_EP_SIZE, 0x01)
+  };
+  return USB_SendControl(0, &hidInterface, sizeof(hidInterface));
+}
 
-void Gamepad_::end(void) 
+int Gamepad_::getDescriptor(USBSetup& setup)
 {
-  this->reset();
+  // Check if this is a HID Class Descriptor request
+  if (setup.bmRequestType != REQUEST_DEVICETOHOST_STANDARD_INTERFACE) { return 0; }
+  if (setup.wValueH != HID_REPORT_DESCRIPTOR_TYPE) { return 0; }
+
+  // In a HID Class Descriptor wIndex cointains the interface number
+  if (setup.wIndex != pluggedInterface) { return 0; }
+
+  // Reset the protocol on reenumeration. Normally the host should not assume the state of the protocol
+  // due to the USB specs, but Windows and Linux just assumes its in report mode.
+  protocol = HID_REPORT_PROTOCOL;
+
+  return USB_SendControl(TRANSFER_PGM, _hidReportDescriptor, sizeof(_hidReportDescriptor));
+}
+
+bool Gamepad_::setup(USBSetup& setup)
+{
+  if (pluggedInterface != setup.wIndex) {
+    return false;
+  }
+
+  uint8_t request = setup.bRequest;
+  uint8_t requestType = setup.bmRequestType;
+
+  if (requestType == REQUEST_DEVICETOHOST_CLASS_INTERFACE)
+  {
+    if (request == HID_GET_REPORT) {
+      // TODO: HID_GetReport();
+      return true;
+    }
+    if (request == HID_GET_PROTOCOL) {
+      // TODO: Send8(protocol);
+      return true;
+    }
+  }
+
+  if (requestType == REQUEST_HOSTTODEVICE_CLASS_INTERFACE)
+  {
+    if (request == HID_SET_PROTOCOL) {
+      protocol = setup.wValueL;
+      return true;
+    }
+    if (request == HID_SET_IDLE) {
+      idle = setup.wValueL;
+      return true;
+    }
+    if (request == HID_SET_REPORT)
+    {
+    }
+  }
+
+  return false;
 }
 
 void Gamepad_::reset()
@@ -87,5 +142,15 @@ void Gamepad_::reset()
 
 void Gamepad_::send() 
 {
-  HID().SendReport(reportId,&_GamepadReport,sizeof(GamepadReport));
+  USB_Send(pluggedEndpoint | TRANSFER_RELEASE, &_GamepadReport, sizeof(GamepadReport));
+}
+
+uint8_t Gamepad_::getShortName(char *name)
+{
+  if(!next) 
+  {
+    strcpy(name, gp_serial);
+    return strlen(name);
+  }
+  return 0;
 }

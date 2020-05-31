@@ -23,9 +23,17 @@
 
 #include "Gamepad.h"
 
+//#define NEOGEO
+
 #define DEBOUNCE 0          // 1=Diddly-squat-Delay-Debouncing™ activated, 0=Debounce deactivated
 #define DEBOUNCE_TIME 10    // Debounce time in milliseconds
 //#define DEBUG             // Enables debugging (sends debug data to usb serial)
+
+#ifdef NEOGEO
+  const char *gp_serial = "NeoGeo to USB";
+#else
+  const char *gp_serial = "Daemonbite Arcade";
+#endif
 
 Gamepad_ Gamepad;           // Set up USB HID gamepad
 bool usbUpdate = false;     // Should gamepad data be sent to USB?
