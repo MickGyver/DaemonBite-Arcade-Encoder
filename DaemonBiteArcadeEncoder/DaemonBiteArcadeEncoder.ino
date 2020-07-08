@@ -23,6 +23,7 @@
 
 #include "Gamepad.h"
 
+//#define PS3                 // PS3 (ScpToolkit) compatibility (Comment out for joystick=X/Y-Axis and B11/B12 as normal buttons)
 //#define NEOGEO
 
 #define DEBOUNCE 0          // 1=Diddly-squat-Delay-Debouncing™ activated, 0=Debounce deactivated
@@ -34,6 +35,11 @@
 #else
   const char *gp_serial = "Daemonbite Arcade";
 #endif
+
+#define UP    0x80
+#define DOWN  0x40
+#define LEFT  0x20
+#define RIGHT 0x10
 
 Gamepad_ Gamepad;           // Set up USB HID gamepad
 bool usbUpdate = false;     // Should gamepad data be sent to USB?
@@ -80,6 +86,8 @@ void setup()
     axesMillis[pin]=0;
   for(pin=0; pin<12; pin++)   
     buttonsMillis[pin]=0;
+
+  Gamepad.reset();
 
   #ifdef DEBUG
     Serial.begin(115200);
@@ -137,17 +145,21 @@ void loop()
     // Has axis inputs changed?
     if(axes != axesPrev)
     {
-      // UP + DOWN = UP, SOCD (Simultaneous Opposite Cardinal Directions) Cleaner
-      if(axes & B10000000)
-        Gamepad._GamepadReport.Y = -1;
-      else if(axes & B01000000)
-        Gamepad._GamepadReport.Y = 1;
-      else
-        Gamepad._GamepadReport.Y = 0;
-      // UP + DOWN = NEUTRAL
-      //Gamepad._GamepadReport.Y = ((axes & B01000000)>>6) - ((axes & B10000000)>>7);
-      // LEFT + RIGHT = NEUTRAL
-      Gamepad._GamepadReport.X = ((axes & B00010000)>>4) - ((axes & B00100000)>>5);
+      #ifdef PS3
+        Gamepad._GamepadReport.hat = dpad2hat(axes);
+      #else
+        // UP + DOWN = UP, SOCD (Simultaneous Opposite Cardinal Directions) Cleaner
+        if(axes & B10000000)
+          Gamepad._GamepadReport.Y = -1;
+        else if(axes & B01000000)
+          Gamepad._GamepadReport.Y = 1;
+        else
+          Gamepad._GamepadReport.Y = 0;
+        // UP + DOWN = NEUTRAL
+        //Gamepad._GamepadReport.Y = ((axes & B01000000)>>6) - ((axes & B10000000)>>7);
+        // LEFT + RIGHT = NEUTRAL
+        Gamepad._GamepadReport.X = ((axes & B00010000)>>4) - ((axes & B00100000)>>5);
+      #endif
       axesPrev = axes;
       usbUpdate = true;
     }
@@ -155,7 +167,18 @@ void loop()
     // Has button inputs changed?
     if(buttons != buttonsPrev)
     {
-      Gamepad._GamepadReport.buttons = buttons;
+      #ifdef PS3
+        Gamepad._GamepadReport.buttons = buttons & 0x3FF;
+        if(buttons & 0x400) // B11
+          Gamepad._GamepadReport.Z = -1;
+        else if(buttons & 0x800) // B12
+          Gamepad._GamepadReport.Z = 1;
+        else
+          Gamepad._GamepadReport.Z = 0;
+      #else
+        Gamepad._GamepadReport.buttons = buttons;
+      #endif
+
       buttonsPrev = buttons;
       usbUpdate = true;
     }
@@ -175,5 +198,20 @@ void loop()
       #endif
     }
   }
- 
+}
+
+uint8_t dpad2hat(uint8_t dpad)
+{
+  switch(dpad & (UP|DOWN|LEFT|RIGHT))
+  {
+    case UP:         return 0;
+    case UP|RIGHT:   return 1;
+    case RIGHT:      return 2;
+    case DOWN|RIGHT: return 3;
+    case DOWN:       return 4;
+    case DOWN|LEFT:  return 5;
+    case LEFT:       return 6;
+    case UP|LEFT:    return 7;
+  }
+  return 15;
 }

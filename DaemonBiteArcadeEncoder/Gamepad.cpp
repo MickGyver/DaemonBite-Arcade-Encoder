@@ -43,15 +43,27 @@ static const uint8_t _hidReportDescriptor[] PROGMEM = {
       0x95, 0x01,                       // REPORT_COUNT (1) ; pad out the bits into a number divisible by 8
       0x75, 0x04,                       // REPORT_SIZE (4)
       0x81, 0x03,                       // INPUT (Const,Var,Abs)
+
+      0x05, 0x01,                       // USAGE_PAGE (Generic Desktop) 
+      0x09, 0x39,                       // USAGE (Hat switch) 
+      0x15, 0x00,                       // LOGICAL_MINIMUM (0) 
+      0x25, 0x07,                       // LOGICAL_MAXIMUM (7) 
+      0x35, 0x00,                       // Physical Minimum (0)
+      0x46, 0x3B, 0x01,                 // Physical Maximum (315)
+      0x95, 0x01,                       // REPORT_COUNT (1)
+      0x75, 0x08,                       // REPORT_SIZE (8) 
+      0x65, 0x14,                       // Unit (20)
+      0x81, 0x02,                       // INPUT (Data,Var,Abs) 
     
       0x05, 0x01,                       // USAGE_PAGE (Generic Desktop)
       0x09, 0x01,                       // USAGE (pointer)
       0xa1, 0x00,                       // COLLECTION (Physical) 
         0x09, 0x30,                       // USAGE (X)
         0x09, 0x31,                       // USAGE (Y)
+        0x09, 0x32,                       // USAGE (Z)
         0x15, 0xff,                       // LOGICAL_MINIMUM (-1)
         0x25, 0x01,                       // LOGICAL_MAXIMUM (1)
-        0x95, 0x02,                       // REPORT_COUNT (2)
+        0x95, 0x03,                       // REPORT_COUNT (3)
         0x75, 0x08,                       // REPORT_SIZE (8)
         0x81, 0x02,                       // INPUT (Data,Var,Abs)
       0xc0,                             // END_COLLECTION
@@ -136,7 +148,9 @@ void Gamepad_::reset()
 {
   _GamepadReport.X = 0;
   _GamepadReport.Y = 0;
+  _GamepadReport.Z = 0;
   _GamepadReport.buttons = 0;
+  _GamepadReport.hat = 15; // Neutral
   this->send();
 }
 
