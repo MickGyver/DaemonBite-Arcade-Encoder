@@ -12,6 +12,7 @@ The wiring is simple. Connect one leg of each microswitch to GND and the other l
 ![Assemble1](images/daemonbite-arcade-encoder-wiring.png)
 
 ## Recommended layout (for PS3 stick compatibility)
+Blue text in image (silk screen) corresponds to the Bx button numbers in the image for wiring above. 
 ![Assemble2](images/daemonbite-arcade-encoder-layout.png)
 
 ## Wiring (NeoGeo USB Adapter)
