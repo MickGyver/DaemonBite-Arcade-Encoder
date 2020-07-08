@@ -11,11 +11,14 @@ The input lag for an arcade controller or adapter built around this project is m
 The wiring is simple. Connect one leg of each microswitch to GND and the other leg to the digital pin according to the schematic below. That's it!  
 ![Assemble1](images/daemonbite-arcade-encoder-wiring.png)
 
+## Recommended layout (for PS3 stick compatibility)
+![Assemble2](images/daemonbite-arcade-encoder-layout.png)
+
 ## Wiring (NeoGeo USB Adapter)
-![Assemble1](images/daemonbite-arcade-encoder-wiring-neogeo.png)
+![Assemble3](images/daemonbite-arcade-encoder-wiring-neogeo.png)
 
 ## Wiring (Atari/Commodore/Amiga USB Adapter)
-![Assemble1](images/daemonbite-arcade-encoder-wiring-atari.png)
+![Assemble4](images/daemonbite-arcade-encoder-wiring-atari.png)
 
 ## Programming the Arduino
 1. Download the free Arduino IDE: https://www.arduino.cc/en/main/software
