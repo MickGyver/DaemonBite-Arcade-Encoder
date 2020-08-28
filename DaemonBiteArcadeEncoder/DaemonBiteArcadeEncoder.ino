@@ -135,7 +135,7 @@ void loop()
         // Sanitize millisNow in case of overflow (after around 50 days, but it can happen! :-)
         if(millisNow < buttonsMillis[pin])
         {
-          axesMillis[pin] = 0;
+          buttonsMillis[pin] = 0;
           millisNow = DEBOUNCE_TIME + 1;
         }
         // Check if the current pin state is different to the stored state and that enough time has passed since last change
