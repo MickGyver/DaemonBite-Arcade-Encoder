@@ -202,8 +202,29 @@ void loop()
 
 uint8_t dpad2hat(uint8_t dpad)
 {
-  switch(dpad & (UP|DOWN|LEFT|RIGHT))
-  {
+  // cleanedInput will hold the inputs after SOCD Cleaning
+  uint8_t cleanedInput;
+
+  // Right shifting dpad by 4 bits so each bit becomes a direction (UDLR)
+  // Bitmasking first 2 and last 2 for socdY (UD) and socdX (LR)
+  uint8_t socdY = dpad >> 4 & 0b1100;
+  uint8_t socdX = dpad >> 4 & 0b0011;
+
+  // Processing SOCD axis on their own
+  if(socdY == 0b1100) {
+    socdY = 0b1000; // Resolves to UP
+  }
+
+  if(socdX == 0b0011) {
+    socdX = 0b0000; // Resolves to Neutral
+  }
+
+  // cleanedInput is both SOCD results through a bitwise OR Gate
+  cleanedInput = socdY | socdX;
+
+  // Normalizing cleanedInput to the same format expected from dpad (0x80 -> 0x8F)
+  // num * base + (base-1), we are working with base16 here (HEX), this will add a F to the end
+  switch((cleanedInput * 16 + (16-1)) & (UP|DOWN|LEFT|RIGHT)) {
     case UP:         return 0;
     case UP|RIGHT:   return 1;
     case RIGHT:      return 2;
@@ -213,5 +234,6 @@ uint8_t dpad2hat(uint8_t dpad)
     case LEFT:       return 6;
     case UP|LEFT:    return 7;
   }
+ 
   return 15;
 }
