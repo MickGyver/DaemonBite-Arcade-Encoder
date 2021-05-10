@@ -28,6 +28,3 @@ Blue text in image (silk screen) corresponds to the Bx button numbers in the ima
 2. Connect the Arduino Pro Micro to a USB port and let the drivers install.
 3. Choose the correct board and virtual COM port in the IDE.
 3. Compile/Upload the project.
-
-## Notes
-DaemonBite is my trade name
