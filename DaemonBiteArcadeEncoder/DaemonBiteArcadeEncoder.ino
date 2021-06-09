@@ -113,6 +113,12 @@ void loop()
       // Debounce axes
       for(pin=0; pin<4; pin++)
       {
+        // Sanitize millisNow in case of overflow (after around 50 days, but it can happen! :-)
+        if(millisNow < axesMillis[pin])
+        {
+          axesMillis[pin] = 0;
+          millisNow = DEBOUNCE_TIME + 1;
+        }
         // Check if the current pin state is different to the stored state and that enough time has passed since last change
         if((axesDirect & axesBits[pin]) != (axes & axesBits[pin]) && (millisNow - axesMillis[pin]) > DEBOUNCE_TIME)
         {
@@ -126,6 +132,12 @@ void loop()
       // Debounce buttons
       for(pin=0; pin<12; pin++)
       {
+        // Sanitize millisNow in case of overflow (after around 50 days, but it can happen! :-)
+        if(millisNow < buttonsMillis[pin])
+        {
+          buttonsMillis[pin] = 0;
+          millisNow = DEBOUNCE_TIME + 1;
+        }
         // Check if the current pin state is different to the stored state and that enough time has passed since last change
         if((buttonsDirect & buttonsBits[pin]) != (buttons & buttonsBits[pin]) && (millisNow - buttonsMillis[pin]) > DEBOUNCE_TIME)
         {
