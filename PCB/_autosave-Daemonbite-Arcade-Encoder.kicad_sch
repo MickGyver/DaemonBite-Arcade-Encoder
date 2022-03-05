@@ -1,0 +1,127 @@
+(kicad_sch (version 20211123) (generator eeschema)
+
+  (uuid 9538e4ed-27e6-4c37-b989-9859dc0d49e8)
+
+  (paper "A")
+
+  (title_block
+    (title "Daemonbite-Arcade-Encoder")
+    (date "2022-03-05")
+    (rev "0")
+    (company "LilyCorp")
+    (comment 1 "by Birdybro")
+    (comment 2 "Original Arduino code and wiring diagrams by MickGuyver")
+  )
+
+  (lib_symbols
+    (symbol "Device:LED" (pin_numbers hide) (pin_names (offset 1.016) hide) (in_bom yes) (on_board yes)
+      (property "Reference" "D" (id 0) (at 0 2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Value" "LED" (id 1) (at 0 -2.54 0)
+        (effects (font (size 1.27 1.27)))
+      )
+      (property "Footprint" "" (id 2) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "Datasheet" "~" (id 3) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_keywords" "LED diode" (id 4) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_description" "Light emitting diode" (id 5) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (property "ki_fp_filters" "LED* LED_SMD:* LED_THT:*" (id 6) (at 0 0 0)
+        (effects (font (size 1.27 1.27)) hide)
+      )
+      (symbol "LED_0_1"
+        (polyline
+          (pts
+            (xy -1.27 -1.27)
+            (xy -1.27 1.27)
+          )
+          (stroke (width 0.254) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.27 0)
+            (xy 1.27 0)
+          )
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy 1.27 -1.27)
+            (xy 1.27 1.27)
+            (xy -1.27 0)
+            (xy 1.27 -1.27)
+          )
+          (stroke (width 0.254) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -3.048 -0.762)
+            (xy -4.572 -2.286)
+            (xy -3.81 -2.286)
+            (xy -4.572 -2.286)
+            (xy -4.572 -1.524)
+          )
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+        (polyline
+          (pts
+            (xy -1.778 -0.762)
+            (xy -3.302 -2.286)
+            (xy -2.54 -2.286)
+            (xy -3.302 -2.286)
+            (xy -3.302 -1.524)
+          )
+          (stroke (width 0) (type default) (color 0 0 0 0))
+          (fill (type none))
+        )
+      )
+      (symbol "LED_1_1"
+        (pin passive line (at -3.81 0 0) (length 2.54)
+          (name "K" (effects (font (size 1.27 1.27))))
+          (number "1" (effects (font (size 1.27 1.27))))
+        )
+        (pin passive line (at 3.81 0 180) (length 2.54)
+          (name "A" (effects (font (size 1.27 1.27))))
+          (number "2" (effects (font (size 1.27 1.27))))
+        )
+      )
+    )
+  )
+
+
+  (symbol (lib_id "Device:LED") (at 95.25 106.68 0) (unit 1)
+    (in_bom yes) (on_board yes) (fields_autoplaced)
+    (uuid e4225e3a-e898-4543-8401-e8105d02a382)
+    (property "Reference" "D?" (id 0) (at 93.6625 100.33 0))
+    (property "Value" "LED" (id 1) (at 93.6625 102.87 0))
+    (property "Footprint" "" (id 2) (at 95.25 106.68 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (property "Datasheet" "~" (id 3) (at 95.25 106.68 0)
+      (effects (font (size 1.27 1.27)) hide)
+    )
+    (pin "1" (uuid 24c15d01-09b5-4670-b959-8af6e6af1e8b))
+    (pin "2" (uuid 673bfed3-8ea2-4c4e-90cb-43c157577acc))
+  )
+
+  (sheet_instances
+    (path "/" (page "1"))
+  )
+
+  (symbol_instances
+    (path "/e4225e3a-e898-4543-8401-e8105d02a382"
+      (reference "D?") (unit 1) (value "LED") (footprint "")
+    )
+  )
+)
