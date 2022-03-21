@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<export version="E">
+  <design>
+    <source>C:\dev\DaemonBite-Arcade-Encoder\PCB\Daemonbite-Arcade-Encoder.kicad_sch</source>
+    <date>3/5/2022 4:33:37 PM</date>
+    <tool>Eeschema (6.0.2)</tool>
+    <sheet number="1" name="/" tstamps="/">
+      <title_block>
+        <title>Daemonbite-Arcade-Encoder</title>
+        <company>MiSTer FPGA</company>
+        <rev>0</rev>
+        <date>2022-03-05</date>
+        <source>Daemonbite-Arcade-Encoder.kicad_sch</source>
+        <comment number="1" value="Original Arduino code and wiring diagrams by MickGuyver"/>
+        <comment number="2" value="PCB Design by Kevin Coleman (birdybro)"/>
+        <comment number="3" value=""/>
+        <comment number="4" value=""/>
+        <comment number="5" value=""/>
+        <comment number="6" value=""/>
+        <comment number="7" value=""/>
+        <comment number="8" value=""/>
+        <comment number="9" value=""/>
+      </title_block>
+    </sheet>
+  </design>
+  <components>
+    <comp ref="B1">
+      <value>SPARKFUN_PRO_MICRO</value>
+      <footprint>promicro:ProMicro</footprint>
+      <fields>
+        <field name="Field4">DEV-12640</field>
+      </fields>
+      <libsource lib="SparkFun-Boards" part="SPARKFUN_PRO_MICRO" description="SparkFun Pro Micro  Atmega32U4 compatible footprint. &lt;b&gt;SparkFun Products:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href= https://www.sparkfun.com/products/12587 &gt;3.3V/8MHz&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href= https://www.sparkfun.com/products/12640 &gt;5V/16MHz&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;"/>
+      <property name="Field4" value="DEV-12640"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>04a790b9-4f09-43bb-be3d-ddb0ec0ad57e</tstamps>
+    </comp>
+    <comp ref="H1">
+      <value>MountingHole_Pad</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>6e78c9dc-f80e-49d4-82d3-47dfdb2b4165</tstamps>
+    </comp>
+    <comp ref="H2">
+      <value>MountingHole_Pad</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>00605021-6a2c-4b14-88b5-deed5a5c1b75</tstamps>
+    </comp>
+    <comp ref="H3">
+      <value>MountingHole_Pad</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2b09158e-e58a-44c4-88d6-d7bc34e8ca20</tstamps>
+    </comp>
+    <comp ref="H4">
+      <value>MountingHole_Pad</value>
+      <footprint>MountingHole:MountingHole_3.2mm_M3_Pad</footprint>
+      <libsource lib="Mechanical" part="MountingHole_Pad" description="Mounting Hole with connection"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b3624450-6659-481e-88c9-e6bbce6bbb41</tstamps>
+    </comp>
+    <comp ref="J1">
+      <value>B1</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>11804ddf-7a6c-494e-9965-12e76de3bf35</tstamps>
+    </comp>
+    <comp ref="J2">
+      <value>B2</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>949978fd-71e7-4e74-a164-023a00cd0eff</tstamps>
+    </comp>
+    <comp ref="J3">
+      <value>B3</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>294ca0e0-bf3b-40bf-ba16-676c9005ba8b</tstamps>
+    </comp>
+    <comp ref="J4">
+      <value>B4</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>58a5a357-a149-416f-938f-a6f6fce8d987</tstamps>
+    </comp>
+    <comp ref="J5">
+      <value>B5</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>357139a7-8a27-4bc8-98fd-fd26fcf29f18</tstamps>
+    </comp>
+    <comp ref="J6">
+      <value>B6</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>75c4436f-e99e-4e32-8531-bbeca4d04b19</tstamps>
+    </comp>
+    <comp ref="J7">
+      <value>B7</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>bc48b412-5dec-46b6-8273-b69aa103381f</tstamps>
+    </comp>
+    <comp ref="J8">
+      <value>B8</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>9d86a6eb-dfd5-434c-86e2-6cb0bca33c7b</tstamps>
+    </comp>
+    <comp ref="J9">
+      <value>B9</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>a0d997ed-a9a1-4201-85ba-e1b0979912e6</tstamps>
+    </comp>
+    <comp ref="J10">
+      <value>B10</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3bd5d3db-6a1f-4b6c-8afa-6de2cd4f7e27</tstamps>
+    </comp>
+    <comp ref="J11">
+      <value>B11</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>743acefb-647f-4965-b60a-c6b5164d8350</tstamps>
+    </comp>
+    <comp ref="J12">
+      <value>B12</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d37c08fc-a50b-4338-a43c-96512be315f1</tstamps>
+    </comp>
+    <comp ref="J13">
+      <value>SEIMITSU</value>
+      <footprint>Connector_JST:JST_XH_B5B-XH-AM_1x05_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>64242a59-e9f7-420f-ad04-4633fd515d17</tstamps>
+    </comp>
+    <comp ref="J14">
+      <value>SANWA</value>
+      <footprint>Connector_JST:JST_XH_B5B-XH-AM_1x05_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector_Generic" part="Conn_01x05" description="Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>51d6ced8-1a88-4458-9d02-264299c6afbb</tstamps>
+    </comp>
+    <comp ref="J15">
+      <value>RIGHT</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>3bae3948-090f-4d53-a7ff-abb555f83f5f</tstamps>
+    </comp>
+    <comp ref="J16">
+      <value>LEFT</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1aa37f43-644e-4b98-a608-93366d487c5c</tstamps>
+    </comp>
+    <comp ref="J17">
+      <value>DOWN</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>1f5eb6e0-91ec-42c4-96ff-08acfcb26653</tstamps>
+    </comp>
+    <comp ref="J18">
+      <value>UP</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>b58c1e01-5f3c-4844-b90e-9cfe3f967ccf</tstamps>
+    </comp>
+    <comp ref="J19">
+      <value>B13</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>04d85d1e-6bb6-4f48-81e2-b112ac2d15e4</tstamps>
+    </comp>
+    <comp ref="J20">
+      <value>B14</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>d7722962-5b0b-4dc2-86b9-349626cf39df</tstamps>
+    </comp>
+    <comp ref="J21">
+      <value>LED</value>
+      <footprint>Connector_JST:JST_XH_B2B-XH-A_1x02_P2.50mm_Vertical</footprint>
+      <libsource lib="Connector" part="Conn_01x02_Male" description="Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)"/>
+      <property name="Sheetname" value=""/>
+      <property name="Sheetfile" value="Daemonbite-Arcade-Encoder.kicad_sch"/>
+      <sheetpath names="/" tstamps="/"/>
+      <tstamps>2123388e-fd64-4a2e-8864-d9516789783e</tstamps>
+    </comp>
+  </components>
+  <libparts>
+    <libpart lib="Connector" part="Conn_01x02_Male">
+      <description>Generic connector, single row, 01x02, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x02_Male</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Connector_Generic" part="Conn_01x05">
+      <description>Generic connector, single row, 01x05, script generated (kicad-library-utils/schlib/autogen/connector/)</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>Connector*:*_1x??_*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">J</field>
+        <field name="Value">Conn_01x05</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="Pin_1" type="passive"/>
+        <pin num="2" name="Pin_2" type="passive"/>
+        <pin num="3" name="Pin_3" type="passive"/>
+        <pin num="4" name="Pin_4" type="passive"/>
+        <pin num="5" name="Pin_5" type="passive"/>
+      </pins>
+    </libpart>
+    <libpart lib="Mechanical" part="MountingHole_Pad">
+      <description>Mounting Hole with connection</description>
+      <docs>~</docs>
+      <footprints>
+        <fp>MountingHole*Pad*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">H</field>
+        <field name="Value">MountingHole_Pad</field>
+        <field name="Datasheet">~</field>
+      </fields>
+      <pins>
+        <pin num="1" name="1" type="input"/>
+      </pins>
+    </libpart>
+    <libpart lib="SparkFun-Boards" part="SPARKFUN_PRO_MICRO">
+      <description>SparkFun Pro Micro  Atmega32U4 compatible footprint. &lt;b&gt;SparkFun Products:&lt;/b&gt;&lt;ul&gt;&lt;li&gt;&lt;a href= https://www.sparkfun.com/products/12587 &gt;3.3V/8MHz&lt;/a&gt;&lt;/li&gt;&lt;li&gt;&lt;a href= https://www.sparkfun.com/products/12640 &gt;5V/16MHz&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;</description>
+      <footprints>
+        <fp>*SPARKFUN_PRO_MICRO*</fp>
+      </footprints>
+      <fields>
+        <field name="Reference">B</field>
+        <field name="Value">SPARKFUN_PRO_MICRO</field>
+        <field name="Footprint">SPARKFUN_PRO_MICRO</field>
+        <field name="Field4">XXX-00000</field>
+      </fields>
+      <pins>
+        <pin num="1" name="TXO" type="bidirectional"/>
+        <pin num="2" name="RXI" type="bidirectional"/>
+        <pin num="3" name="GND" type="power_in"/>
+        <pin num="4" name="GND" type="power_in"/>
+        <pin num="5" name="2" type="bidirectional"/>
+        <pin num="6" name="*3" type="bidirectional"/>
+        <pin num="7" name="4" type="bidirectional"/>
+        <pin num="8" name="*5" type="bidirectional"/>
+        <pin num="9" name="*6" type="bidirectional"/>
+        <pin num="10" name="7" type="bidirectional"/>
+        <pin num="11" name="8" type="bidirectional"/>
+        <pin num="12" name="*9" type="bidirectional"/>
+        <pin num="13" name="*10" type="bidirectional"/>
+        <pin num="14" name="11(MOSI)" type="bidirectional"/>
+        <pin num="15" name="12(MISO)" type="bidirectional"/>
+        <pin num="16" name="13(SCK)" type="bidirectional"/>
+        <pin num="17" name="A0" type="bidirectional"/>
+        <pin num="18" name="A1" type="bidirectional"/>
+        <pin num="19" name="A2" type="bidirectional"/>
+        <pin num="20" name="A3" type="bidirectional"/>
+        <pin num="21" name="VCC" type="power_in"/>
+        <pin num="22" name="RESET" type="bidirectional"/>
+        <pin num="23" name="GND" type="power_in"/>
+        <pin num="24" name="RAW" type="power_in"/>
+      </pins>
+    </libpart>
+  </libparts>
+  <libraries>
+    <library logical="Connector">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector.kicad_sym</uri>
+    </library>
+    <library logical="Connector_Generic">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Connector_Generic.kicad_sym</uri>
+    </library>
+    <library logical="Mechanical">
+      <uri>C:\Program Files\KiCad\6.0\share\kicad\symbols\/Mechanical.kicad_sym</uri>
+    </library>
+    <library logical="SparkFun-Boards">
+      <uri>C:\Users\aberu\Downloads\SparkFun-KiCad-Libraries-master\Libraries\SparkFun-Boards.lib</uri>
+    </library>
+  </libraries>
+  <nets>
+    <net code="1" name="/B1">
+      <node ref="B1" pin="6" pinfunction="*3" pintype="bidirectional"/>
+      <node ref="J1" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="2" name="/B2">
+      <node ref="B1" pin="5" pinfunction="2" pintype="bidirectional"/>
+      <node ref="J2" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="3" name="/B3">
+      <node ref="B1" pin="2" pinfunction="RXI" pintype="bidirectional"/>
+      <node ref="J3" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="4" name="/B4">
+      <node ref="B1" pin="1" pinfunction="TXO" pintype="bidirectional"/>
+      <node ref="J4" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="5" name="/B5">
+      <node ref="B1" pin="7" pinfunction="4" pintype="bidirectional"/>
+      <node ref="J5" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="6" name="/B6">
+      <node ref="B1" pin="16" pinfunction="13(SCK)" pintype="bidirectional"/>
+      <node ref="J6" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="7" name="/B7">
+      <node ref="B1" pin="14" pinfunction="11(MOSI)" pintype="bidirectional"/>
+      <node ref="J7" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="8" name="/B8">
+      <node ref="B1" pin="15" pinfunction="12(MISO)" pintype="bidirectional"/>
+      <node ref="J8" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="9" name="/B9">
+      <node ref="B1" pin="11" pinfunction="8" pintype="bidirectional"/>
+      <node ref="J9" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="10" name="/B10">
+      <node ref="B1" pin="12" pinfunction="*9" pintype="bidirectional"/>
+      <node ref="J10" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="11" name="/B11">
+      <node ref="B1" pin="13" pinfunction="*10" pintype="bidirectional"/>
+      <node ref="J11" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="12" name="/B12">
+      <node ref="B1" pin="9" pinfunction="*6" pintype="bidirectional"/>
+      <node ref="J12" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="13" name="/B13">
+      <node ref="B1" pin="8" pinfunction="*5" pintype="bidirectional"/>
+      <node ref="J19" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="14" name="/B14">
+      <node ref="B1" pin="10" pinfunction="7" pintype="bidirectional"/>
+      <node ref="J20" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="15" name="/DOWN">
+      <node ref="B1" pin="18" pinfunction="A1" pintype="bidirectional"/>
+      <node ref="J13" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J14" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J17" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="16" name="/LEFT">
+      <node ref="B1" pin="19" pinfunction="A2" pintype="bidirectional"/>
+      <node ref="J13" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J14" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J16" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="17" name="/RIGHT">
+      <node ref="B1" pin="20" pinfunction="A3" pintype="bidirectional"/>
+      <node ref="J13" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J14" pin="3" pinfunction="Pin_3" pintype="passive"/>
+      <node ref="J15" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="18" name="/UP">
+      <node ref="B1" pin="17" pinfunction="A0" pintype="bidirectional"/>
+      <node ref="J13" pin="2" pinfunction="Pin_2" pintype="passive"/>
+      <node ref="J14" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J18" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="19" name="/VCC">
+      <node ref="B1" pin="21" pinfunction="VCC" pintype="power_in"/>
+      <node ref="J21" pin="2" pinfunction="Pin_2" pintype="passive"/>
+    </net>
+    <net code="20" name="GND">
+      <node ref="B1" pin="23" pinfunction="GND" pintype="power_in"/>
+      <node ref="B1" pin="3" pinfunction="GND" pintype="power_in"/>
+      <node ref="B1" pin="4" pinfunction="GND" pintype="power_in"/>
+      <node ref="H1" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H2" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H3" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="H4" pin="1" pinfunction="1" pintype="input"/>
+      <node ref="J1" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J10" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J11" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J12" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J13" pin="4" pinfunction="Pin_4" pintype="passive"/>
+      <node ref="J14" pin="5" pinfunction="Pin_5" pintype="passive"/>
+      <node ref="J15" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J16" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J17" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J18" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J19" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J2" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J20" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J21" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J3" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J4" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J5" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J6" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J7" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J8" pin="1" pinfunction="Pin_1" pintype="passive"/>
+      <node ref="J9" pin="1" pinfunction="Pin_1" pintype="passive"/>
+    </net>
+    <net code="21" name="unconnected-(B1-Pad22)">
+      <node ref="B1" pin="22" pinfunction="RESET" pintype="bidirectional+no_connect"/>
+    </net>
+    <net code="22" name="unconnected-(B1-Pad24)">
+      <node ref="B1" pin="24" pinfunction="RAW" pintype="power_in+no_connect"/>
+    </net>
+  </nets>
+</export>
